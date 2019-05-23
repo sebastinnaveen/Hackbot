@@ -1,14 +1,43 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Hackbot Chat
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+  <div class="messages">
+    <div class="message-left">
+      <p>The recorded voice scratched in the speaker.</p>
+    </div>
+    <div class="message-right">
+      <p>The face of the moon was in shadow.</p>
+    </div>
+    <div class="message-left">
+      <p>)))</p>
+    </div>
+    <div class="message-left">
+      <p>Are you seriously?</p>
+    </div>
+
+    <div class="typing">
+      <div class="circle cir-1"></div>
+      <div class="circle cir-2"></div>
+      <div class="circle cir-3"></div>
+    </div>
   </div>
+
+
 </ion-content>
+
+<ion-footer>
+  <ion-item>
+    <ion-input value="" placeholder="type your message here..."></ion-input>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="paper-plane"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
+</ion-footer>
