@@ -1,43 +1,45 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Hackbot Chat
+      Hackbot
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="messages">
-    <div class="message-left">
-      <p>The recorded voice scratched in the speaker.</p>
+  <div class="messages" *ngFor="let item of chatList; let i = index">
+    <div *ngIf= "!item.isUserTyped" class="message-left">
+      <p>{{item.text}}</p>
     </div>
-    <div class="message-right">
-      <p>The face of the moon was in shadow.</p>
+    <div *ngIf= "item.isUserTyped" class="message-right">
+      <p>{{item.text}}</p>
     </div>
-    <div class="message-left">
-      <p>)))</p>
-    </div>
-    <div class="message-left">
-      <p>Are you seriously?</p>
-    </div>
-
-    <div class="typing">
-      <div class="circle cir-1"></div>
-      <div class="circle cir-2"></div>
-      <div class="circle cir-3"></div>
-    </div>
+    
   </div>
+  
+  <div class="type" *ngIf="showType">
+      <div class="typing">
+          <div class="circle cir-1"></div>
+          <div class="circle cir-2"></div>
+          <div class="circle cir-3"></div>
+        </div>
+
+  </div>
+  
 
 
 </ion-content>
 
 <ion-footer>
   <ion-item>
-    <ion-input value="" placeholder="type your message here..."></ion-input>
+      <form [formGroup]="chatForm" (ngSubmit) = "submit()">
+    <ion-input (keypress)="changeText($event)" formControlName="chatbox" placeholder="type your message here..."></ion-input>
+  </form>
     <ion-buttons slot="end">
-      <ion-button>
+      <ion-button (click)="submit()">
         <ion-icon name="paper-plane"></ion-icon>
       </ion-button>
     </ion-buttons>
+    
   </ion-item>
 </ion-footer>
