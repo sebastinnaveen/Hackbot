@@ -9,7 +9,7 @@ before_install:
   
 install:
   
-  - gcloud config set project Hackbot
+  - gcloud config set project hackbot
     
   - npm install
 
