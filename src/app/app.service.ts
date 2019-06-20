@@ -18,6 +18,7 @@ export class AppService {
             })
         }
         //https://instbotrpa.appspot.com/instbot/nlp
-        return this.httpClient.post('https://instbotrpa.appspot.com/instbot/nlp', textRequest, httpOptions);
+       // return this.httpClient.post('https://instbotrpa.appspot.com/instbot/nlp', textRequest, httpOptions);
+       return this.httpClient.post('http://localhost:5001/instbot/nlp', textRequest, httpOptions);
     }
 }
