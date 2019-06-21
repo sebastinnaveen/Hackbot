@@ -4,6 +4,7 @@
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
   "scripts": {
+    "install": "npm install",
     "start": "ionic serve"
   },
   "private": true,
