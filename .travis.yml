@@ -11,6 +11,12 @@ install:
   
   - gcloud config set project 	techbot-244314
     
+  - npm install -g @angular/cli
+
+  - npm install -g ionic
+
+  - npm install -g cordova
+
   - npm install
 
 script:
