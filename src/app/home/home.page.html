@@ -9,7 +9,21 @@
 <ion-content>
   <div class="messages" *ngFor="let item of chatList; let i = index">
     <div *ngIf= "!item.isUserTyped" class="message-left">
-      <p>{{item.text}}</p>
+        <div *ngIf= "!item.payload">
+            <p>{{item.text}}</p>
+      </div>
+      <div *ngIf= "item.payload">
+          <p>{{item.payload.message}}</p>
+          <div></div>
+          <div *ngFor="let data of item.payload.data"> 
+            <ul>
+                <li *ngFor="let v of data | keyvalue">
+                    <b>{{v.key}}</b>: {{v.value}}
+                </li>
+            </ul>
+            
+        </div>
+      </div>
     </div>
     <div *ngIf= "item.isUserTyped" class="message-right">
       <p>{{item.text}}</p>
